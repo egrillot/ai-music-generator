@@ -8,4 +8,8 @@ In this project, we set ourselves the goal of exploring as many possibilities as
 
 ## Dataset
 
-We worked with the data: [Lakh Pianoroll Dataset](https://salu133445.github.io/lakh-pianoroll-dataset/). We kept the cleaned data "lpd_5/lpd_5_cleansed". We can find in this dataset 21,425 multitrack pianorolls. From this data, we extracted for each piece the tracks of 5 instruments where possible. These instruments are the piano, the guitar, the bass, the strings and the drums. Thus, a song is represented by a dictionary whose keys are the instrument names and whose values are the tracks. If an instrument is not represented, we assign the value "None" in the dictionary, otherwise the track is represented by a matrix of size n x 128 where n corresponds to the number of time steps in the song and 128 the number of possible notes.
+We worked with the data: [Lakh Pianoroll Dataset](https://salu133445.github.io/lakh-pianoroll-dataset/). We kept the cleaned data "lpd_5/lpd_5_cleansed". We can find in this dataset 21,425 multitrack pianorolls. From this data, we extracted for each piece the tracks of 5 instruments where possible. These instruments are the piano, the guitar, the bass, the strings and the drums. Thus, a song is represented by a dictionary whose keys are the instrument names and whose values are the tracks. If an instrument is not represented, we assign the value "None" in the dictionary, otherwise the track is represented by a matrix of size n x 128 where n corresponds to the number of time steps in the song and 128 the number of possible notes. For smaller models and with fewer ambitions than generating entire pieces of music, we used the [music21](https://web.mit.edu/music21/) library from which we were able to extract the Bach pieces.
+
+Finally, in both cases, a note will be represented by its velocity which is an integer between 1 and 127. 
+
+## Sequence to one pitch
