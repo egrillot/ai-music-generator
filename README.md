@@ -16,6 +16,8 @@ Finally, in both cases, a note will be represented by its velocity which is an i
 
 Here we use the Bach pieces to train our models. Our first approach was to use an LSTM on a sequence of notes of size 64 to predict the next most appropriate note using a softmax layer. The work done is available on the notebook **SimpleLSTM**. The results lacked creativity, the sound generated was a soulless succession of musical notes. So we tried to improve our model by using variational auto encoder. We also tried to improve the sequence processing by comparing the use of LSTMs and convolution layers in the **SimpleLSTM+VAE** and **SimpleCONV+VAE** notebooks. The results were much more pleasant to listen to. However, these models only allow one track of an instrument to be played with one hand (2 notes cannot be played at the same time). We will now work on models capable of generating multiple instrument tracks where notes can be played at the same time.
 
+
+
 ## Music generation
 
 We will now use the Lakh Pianoroll dataset. We had the idea of using autoencoders based on convolution layers to reduce the size of our problem. To do this, we divided the tracks of the chunks into window sequences of size 256 (time step). The goal was to compress matrices of size 256 x 128 into a latent space of size 128. The work is available in the notebook **WindowAutoEncoder**. We then built models that from a latent space vector at time t predict the vector at time t+1. To force the instruments to obey the same melody to mix correctly, we opted for the following strategy: 
