@@ -24,4 +24,5 @@ We will now use the Lakh Pianoroll dataset. We had the idea of using autoencoder
 
 Here is an illustration of the generation of a piece (the code is available on the notebook **MelodyNNs**): 
 
+<img src="images/MusicGenerator.png" WIDTH=600 HEIGHT=500>
 
