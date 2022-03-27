@@ -14,9 +14,18 @@ Finally, in both cases, a note will be represented by its velocity which is an i
 
 ## Sequence to one pitch
 
-Here we use the Bach pieces to train our models. Our first approach was to use an LSTM on a sequence of notes of size 64 to predict the next most appropriate note using a softmax layer. The work done is available on the notebook **SimpleLSTM**. The results lacked creativity, the sound generated was a soulless succession of musical notes. So we tried to improve our model by using variational auto encoder. We also tried to improve the sequence processing by comparing the use of LSTMs and convolution layers in the **SimpleLSTM+VAE** and **SimpleCONV+VAE** notebooks. The results were much more pleasant to listen to. However, these models only allow one track of an instrument to be played with one hand (2 notes cannot be played at the same time). We will now work on models capable of generating multiple instrument tracks where notes can be played at the same time.
+Here we use the Bach pieces to train our models. Our first approach was to use an LSTM on a sequence of notes of size 64 to predict the next most appropriate note using a softmax layer. The work done is available on the notebook **SimpleLSTM**. The results lacked creativity, the sound generated was a soulless succession of musical notes. So we tried to improve our model by using variational auto encoder. We also tried to improve the sequence processing by comparing the use of LSTMs and convolution layers in the **SimpleLSTM+VAE** and **SimpleCONV+VAE** notebooks. The results were much more pleasant to listen to. However, these models only allow one track of an instrument to be played with one hand (2 notes cannot be played at the same time). We will now work on models capable of generating multiple instrument tracks where notes can be played at the same time. Our results are bellow:
 
-
+<table>
+  <tr>
+    <td>LSTM></td>
+    <td>LSTM+VAE</td>
+  </tr>
+  <tr>
+    <td><audio src="samples/LSTM.mp3" autoplay></audio></td>    
+    <td><audio src="samples/LSTM+VAE.mp3" autoplay></audio></td>
+  </tr>
+ </table>
 
 ## Music generation
 
@@ -27,4 +36,17 @@ We will now use the Lakh Pianoroll dataset. We had the idea of using autoencoder
 Here is an illustration of the generation of a piece (the code is available on the notebook **MelodyNNs**): 
 
 <img src="images/MusicGenerator.png" WIDTH=600 HEIGHT=300>
+
+Our results are bellow:
+
+<table>
+  <tr>
+    <td>Tracks></td>
+    <td>Music generated</td>
+  </tr>
+  <tr>
+    <td>Audio</audio></td>    
+    <td><audio src="samples/musicgenerated.mp3" autoplay></audio></td>
+  </tr>
+ </table>
 
