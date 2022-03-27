@@ -13,3 +13,9 @@ We worked with the data: [Lakh Pianoroll Dataset](https://salu133445.github.io/l
 Finally, in both cases, a note will be represented by its velocity which is an integer between 1 and 127. 
 
 ## Sequence to one pitch
+
+Here we use the Bach pieces to train our models. Our first approach was to use an LSTM on a sequence of notes of size 64 to predict the next most appropriate note using a softmax layer. The work done is available on the notebook **SimpleLSTM**. The results lacked creativity, the sound generated was a soulless succession of musical notes. So we tried to improve our model by using variational auto encoder. We also tried to improve the sequence processing by comparing the use of LSTMs and convolution layers in the **SimpleLSTM+VAE** and **SimpleCONV+VAE** notebooks. The results were much more pleasant to listen to. However, these models only allow one track of an instrument to be played with one hand (2 notes cannot be played at the same time). We will now work on models capable of generating multiple instrument tracks where notes can be played at the same time.
+
+## Music generation
+
+We will now use the Lakh Pianoroll dataset. 
