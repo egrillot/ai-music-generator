@@ -8,4 +8,4 @@ In this project, we set ourselves the goal of exploring as many possibilities as
 
 ## Dataset
 
-[Lakh Pianoroll Dataset](https://salu133445.github.io/lakh-pianoroll-dataset/)
+We worked with the data: [Lakh Pianoroll Dataset](https://salu133445.github.io/lakh-pianoroll-dataset/). We kept the cleaned data "lpd_5/lpd_5_cleansed". We can find in this dataset 21,425 multitrack pianorolls. From this data, we extracted for each piece the tracks of 5 instruments where possible. These instruments are the piano, the guitar, the bass, the strings and the drums. Thus, a song is represented by a dictionary whose keys are the instrument names and whose values are the tracks. If an instrument is not represented, we assign the value "None" in the dictionary, otherwise the track is represented by a matrix of size n x 128 where n corresponds to the number of time steps in the song and 128 the number of possible notes.
